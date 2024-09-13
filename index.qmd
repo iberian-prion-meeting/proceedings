@@ -2,4 +2,4 @@
 title: "Iberian Congress on Prions Proceedings"
 ---
 
--   [Proceedings 2024](BookOfAbstract_IberianPrion24.pdf)
+-   [Proceedings 2024](Proceedings2024.pdf)
