@@ -18,14 +18,17 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v3.0.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Quarto manually
+        run: |
+          wget https://quarto.org/download/latest/quarto-linux-amd64.deb
+          sudo dpkg -i quarto-linux-amd64.deb
+          quarto check install
 
-      - name: Publish to GitHub Pages (and render)
-        uses: quarto-dev/quarto-actions/publish@v3.0.3
+      - name: Render site
+        run: quarto render
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
