@@ -4,7 +4,7 @@ project:
 website:
   title: "Iberian Prion Congress"
   reader-mode: true
-  page-footer: "&copy; 2023-2026 Website developed by Michał Burdukiewicz, Carlos Pintado-Grima (IBB-UAB), Dino Gasparotto (UNITN), Sara Canoyra Sanchez (CSIC) and Juan Carlos Espinosa (CSIC)."
+  page-footer: "&copy; 2023-2026 Website developed by Michał Burdukiewicz, Carlos Pintado-Grima (IBB-UAB), Dino Gasparotto (UNITN), Sara Canoyra Sanchez (CSIC) and Juan Carlos Espinosa (CSIC)"
   navbar:
     background: primary
     search: true
