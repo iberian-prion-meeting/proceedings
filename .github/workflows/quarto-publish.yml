@@ -18,10 +18,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install Quarto manually
+      - name: Install Quarto from apt
         run: |
-          wget https://quarto.org/download/latest/quarto-linux-amd64.deb
-          sudo dpkg -i quarto-linux-amd64.deb
+          sudo apt-get update
+          sudo apt-get install -y wget gdebi-core
+          wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.57/quarto-1.5.57-linux-amd64.deb
+          sudo gdebi -n quarto-1.5.57-linux-amd64.deb
           quarto check install
 
       - name: Render site
